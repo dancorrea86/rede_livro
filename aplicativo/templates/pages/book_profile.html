@@ -1,0 +1,21 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Usuarios{% endblock %}
+
+
+{% block content %}
+<div class="space-navbar">
+    {% if book.book_pic %}
+        <img class="img_profile" src="{{ book.book_pic.url }}">
+    {% else %}
+        <img class="img_profile">
+    {% endif %}
+    <h1>{{ book.name }}</h1>
+</div>
+<div class="bar"></div>
+<div class="content">
+    <h1>Descrição</h1>
+    <p>{{ book.description }}</p>
+</div>
+{% endblock %}

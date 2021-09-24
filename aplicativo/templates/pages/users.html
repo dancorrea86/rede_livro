@@ -1,0 +1,28 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block content %}
+<div class="content">
+    <h1>Usuarios</h1>
+    <div>
+        <div class="users_search">
+            {% if users %}
+            {% for user in users %}
+            <div class="user_box">
+                {% if user.profile_pic %}
+                    <a href="{% url 'user' user.id %}"><img class="mini_img_profile" src="{{ user.profile_pic.url }}"></a>
+                {% else %}
+                    <img class="mini_img_profile">
+                {% endif %}
+                <p><a href="{% url 'user' user.id %}">{{ user.name }}</a></p>
+            </div>
+            {% endfor %}
+            {% else %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
