@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'aplicativo',
+    'members',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User Model
 
 AUTH_USER_MODEL = "aplicativo.User"
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
